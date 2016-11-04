@@ -241,9 +241,11 @@ public class BBTCodegen extends AbstractJavaCodegen {
             		operation.examples = new ExampleGenerator(swagger.getDefinitions()).generate(responseTmp.getExamples(), operationTmp.getProduces(), responseTmp.getSchema());
             	}
         		
-    			for (Map<String, String> example : operation.examples) {
-        			example.put("responseCode", response.code);   
-    			}
+            	if (operation.examples != null) {
+	    			for (Map<String, String> example : operation.examples) {
+	        			example.put("responseCode", response.code);   
+	    			}
+            	}
         			
     			// TODO distinguish multiple response codes
         		break;
