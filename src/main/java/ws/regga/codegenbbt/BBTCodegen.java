@@ -55,6 +55,7 @@ public class BBTCodegen extends AbstractJavaCodegen {
         cliOptions.add(new CliOption(CodegenConstants.API_PACKAGE, CodegenConstants.API_PACKAGE_DESC));     
         cliOptions.add(new CliOption("testClassAnnotations", "Annotations to add for each generated test class"));
         cliOptions.add(new CliOption("singleTestClass", "Indicate to merge test classes into one"));
+        cliOptions.add(new CliOption("testBaseModel", "Parent test class for generated classes"));
         // TODO support outputFolder
     }
     
@@ -69,7 +70,7 @@ public class BBTCodegen extends AbstractJavaCodegen {
         }
 
         Object testBaseModel = additionalProperties.get("testBaseModel");
-        if (testBaseModel != null && !testBaseModel.equals("DEFAULT")) {
+        if (testBaseModel != null) {
         	// TODO improve test base model mgt e.g. "NONE"
         }
         else supportingFiles.add(new SupportingFile("TestBase.mustache", (testFolder + '/' + apiPackage).replace(".", "/"), "TestBase.java"));  

@@ -38,7 +38,7 @@
 @org.junit.FixMethodOrder(org.junit.runners.MethodSorters.NAME_ASCENDING)
 								</testClassAnnotations>
 								<singleTestClass>true</singleTestClass>
-								<testBaseModel>DEFAULT</testBaseModel>
+<!-- 								<testBaseModel>DEFAULT</testBaseModel> -->
 			                </configOptions>                 			
 						</configuration>
 					</execution>
