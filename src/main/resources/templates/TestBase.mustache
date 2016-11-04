@@ -1,0 +1,15 @@
+package {{apiPackage}};
+
+import org.junit.*;
+
+import java.util.Map;
+import java.util.HashMap;
+
+public class TestBase {
+	
+	public void assertCall(String url, String httpMethod, Map<String, String> requestHeaders, String requestBody, Map<String, String> expectedResponseHeaders, String expectedResponseBody, Integer expectedResponseCode) throws Exception {
+	
+		// PERFORM CALL AND COMPARE RESULTS TO EXPECTED VALUES	
+	}
+
+}
