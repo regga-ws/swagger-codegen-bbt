@@ -30,14 +30,13 @@
 							<language>ws.regga.codegenbbt.BBTCodegen</language>
 							<inputSpec>http://petstore.swagger.io/v2/swagger.json</inputSpec>
 			                <configOptions>
-			                	<apiPackage>com.actility.tpdx.core.test</apiPackage>
-								<testClassAnnotations>
-@org.junit.runner.RunWith(org.springframework.test.context.junit4.SpringRunner.class) 
-@org.springframework.boot.test.context.SpringBootTest(webEnvironment=org.springframework.boot.test.context.SpringBootTest.WebEnvironment.DEFINED_PORT) 
-@org.springframework.test.context.TestPropertySource(locations="classpath:application-test.properties") 
-@org.junit.FixMethodOrder(org.junit.runners.MethodSorters.NAME_ASCENDING)
-								</testClassAnnotations>
-								<singleTestClass>true</singleTestClass>
+<!-- 			                	<apiPackage>com.yourpackage</apiPackage> -->
+<!-- 								<testClassAnnotations> -->
+<!-- @org.junit.runner.RunWith(org.springframework.test.context.junit4.SpringRunner.class)  -->
+<!-- @org.springframework.boot.test.context.SpringBootTest(webEnvironment=org.springframework.boot.test.context.SpringBootTest.WebEnvironment.DEFINED_PORT -->
+<!-- @org.junit.FixMethodOrder(org.junit.runners.MethodSorters.NAME_ASCENDING) -->
+<!-- 								</testClassAnnotations> -->
+<!-- 								<mergeTestClasses>true</mergeTestClasses> -->
 <!-- 								<testBaseModel>DEFAULT</testBaseModel> -->
 			                </configOptions>                 			
 						</configuration>

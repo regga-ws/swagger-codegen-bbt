@@ -54,7 +54,7 @@ public class BBTCodegen extends AbstractJavaCodegen {
 
         cliOptions.add(new CliOption(CodegenConstants.API_PACKAGE, CodegenConstants.API_PACKAGE_DESC));     
         cliOptions.add(new CliOption("testClassAnnotations", "Annotations to add for each generated test class"));
-        cliOptions.add(new CliOption("singleTestClass", "Indicate to merge test classes into one"));
+        cliOptions.add(new CliOption("mergeTestClasses", "Indicate to merge test classes into one"));
         cliOptions.add(new CliOption("testBaseModel", "Parent test class for generated classes"));
         // TODO support outputFolder
     }
@@ -63,10 +63,10 @@ public class BBTCodegen extends AbstractJavaCodegen {
     public void processOpts() {
         super.processOpts();
 
-        Object singleTestClass = additionalProperties.get("singleTestClass");
-        if (singleTestClass != null && Boolean.valueOf(singleTestClass.toString())) {
+        Object mergeTestClasses = additionalProperties.get("mergeTestClasses");
+        if (mergeTestClasses != null && Boolean.valueOf(mergeTestClasses.toString())) {
             apiTestTemplateFiles.clear();
-            supportingFiles.add(new SupportingFile("SingleTestSuite.mustache", (testFolder + '/' + apiPackage).replace(".", "/"), "SingleTestSuite.java"));  
+            supportingFiles.add(new SupportingFile("MergedTest.mustache", (testFolder + '/' + apiPackage).replace(".", "/"), "MergedTest.java"));  
         }
 
         Object testBaseModel = additionalProperties.get("testBaseModel");
@@ -142,7 +142,7 @@ public class BBTCodegen extends AbstractJavaCodegen {
 										}
 									}
 									
-									exampleBuilder.append("    public void bbTest_" + id + "() throws Exception {\n\n");
+									exampleBuilder.append("    public void bbt_" + id + "() throws Exception {\n\n");
 									
 									String inputContent = null;
 									if (input.indexOf("-d '") > 0) {
