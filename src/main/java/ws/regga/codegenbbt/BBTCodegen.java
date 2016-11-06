@@ -54,7 +54,8 @@ public class BBTCodegen extends AbstractJavaCodegen {
 
         cliOptions.add(new CliOption(CodegenConstants.API_PACKAGE, CodegenConstants.API_PACKAGE_DESC));     
         cliOptions.add(new CliOption("testClassAnnotations", "Annotations to add for each generated test class"));
-        cliOptions.add(new CliOption("mergeTestClasses", "Indicate to merge test classes into one"));
+        cliOptions.add(new CliOption("testClassContent", "Content to add - constructor, attributes, methods - within each generated test class"));
+        cliOptions.add(new CliOption("mergeTestClasses", "Indicate to merge all test classes into one"));
         cliOptions.add(new CliOption("testBaseModel", "Parent test class for generated classes"));
         // TODO support outputFolder
     }
@@ -80,6 +81,14 @@ public class BBTCodegen extends AbstractJavaCodegen {
 			public String getOutput(Template.Fragment frag) {
 		    	Object testClassAnnotations = additionalProperties.get("testClassAnnotations");
 				return testClassAnnotations != null ? testClassAnnotations.toString() : null;
+			}
+		});
+        
+        additionalProperties.put("fnPrintContent", new CustomLambda() {			
+			@Override
+			public String getOutput(Template.Fragment frag) {
+		    	Object testClassContent = additionalProperties.get("testClassContent");
+				return testClassContent != null ? testClassContent.toString() : null;
 			}
 		});
         

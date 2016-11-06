@@ -7,6 +7,7 @@ import java.util.HashMap;
 
  {{#fnPrintAnnotations}}{{/fnPrintAnnotations}}
 public class {{classname}}Test extends TestBase {
+ {{#fnPrintContent}}{{/fnPrintContent}}
 {{#operations}}{{#operation}}
 {{#examples}}{{#fnParseExamples}}{{example}}{{/fnParseExamples}}{{/examples}}
 {{/operation}}{{/operations}}

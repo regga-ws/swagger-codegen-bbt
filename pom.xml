@@ -36,6 +36,11 @@
 <!-- @org.springframework.boot.test.context.SpringBootTest(webEnvironment=org.springframework.boot.test.context.SpringBootTest.WebEnvironment.DEFINED_PORT -->
 <!-- @org.junit.FixMethodOrder(org.junit.runners.MethodSorters.NAME_ASCENDING) -->
 <!-- 								</testClassAnnotations> -->
+<!-- 								<testClassContent> -->
+<!-- public MergedTest(String targetProfile) { -->
+<!-- 	super(targetProfile); -->
+<!-- } -->
+<!-- 								</testClassContent> -->
 <!-- 								<mergeTestClasses>true</mergeTestClasses> -->
 <!-- 								<testBaseModel>DEFAULT</testBaseModel> -->
 			                </configOptions>                 			
