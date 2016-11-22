@@ -3,7 +3,7 @@
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>ws.regga</groupId>
 	<artifactId>swagger-codegen-bbt</artifactId>
-	<version>1.0.0</version>
+	<version>1.1.0</version>
 	<packaging>jar</packaging>
 
 	<dependencies>
@@ -27,22 +27,22 @@
 							<goal>generate</goal>
 						</goals>
 						<configuration>
-							<language>ws.regga.codegenbbt.BBTCodegen</language>
-							<inputSpec>http://petstore.swagger.io/v2/swagger.json</inputSpec>
-			                <configOptions>
-<!-- 			                	<apiPackage>com.yourpackage</apiPackage> -->
-<!-- 								<testClassAnnotations> -->
-<!-- @org.junit.runner.RunWith(org.springframework.test.context.junit4.SpringRunner.class)  -->
-<!-- @org.springframework.boot.test.context.SpringBootTest(webEnvironment=org.springframework.boot.test.context.SpringBootTest.WebEnvironment.DEFINED_PORT -->
-<!-- @org.junit.FixMethodOrder(org.junit.runners.MethodSorters.NAME_ASCENDING) -->
-<!-- 								</testClassAnnotations> -->
-<!-- 								<testClassContent> -->
-<!-- public MergedTest(String targetProfile) { -->
-<!-- 	super(targetProfile); -->
-<!-- } -->
-<!-- 								</testClassContent> -->
-<!-- 								<mergeTestClasses>true</mergeTestClasses> -->
-<!-- 								<testBaseModel>DEFAULT</testBaseModel> -->
+							<language>ws.regga.codegen.bbt.JavaBBTCodegen</language>
+<!-- 							<inputSpec>http://petstore.swagger.io/v2/swagger.json</inputSpec> -->
+			                <inputSpec>C:\Data\Lab\Repositories\TPDX\tpdx-core\src\main\resources\tpdx-core-api-contract.inflector.new.json</inputSpec>
+                 			<configOptions>
+			                	<testPackage>com.yourpackage</testPackage>
+								<testClassAnnotations>
+								@org.junit.runner.RunWith(org.springframework.test.context.junit4.SpringRunner.class) 
+								@org.springframework.boot.test.context.SpringBootTest(webEnvironment=org.springframework.boot.test.context.SpringBootTest.WebEnvironment.DEFINED_PORT)
+								@org.junit.FixMethodOrder(org.junit.runners.MethodSorters.NAME_ASCENDING)
+								</testClassAnnotations>
+								<testClassAdditionalContent>
+								public {{classname}}(String targetProfile) {
+									super(targetProfile);
+								}
+								</testClassAdditionalContent>
+<!-- 								<testParentClass>TestBase</testParentClass> -->
 			                </configOptions>                 			
 						</configuration>
 					</execution>

@@ -1,0 +1,13 @@
+{{#fnIncrementSupportingFileCounter}}{{/fnIncrementSupportingFileCounter}}
+
+package {{#fnPrintPackage}}{{/fnPrintPackage}};
+
+import org.junit.*;
+import java.util.Map;
+import java.util.HashMap;
+
+{{#fnPrintAnnotations}}{{/fnPrintAnnotations}}
+public class {{#fnPrintClassnameAndParent}}{{/fnPrintClassnameAndParent}} {
+{{#fnPrintAdditionalContent}}{{/fnPrintAdditionalContent}}
+{{#fnPrintStoriesAsBBT}}{{/fnPrintStoriesAsBBT}}
+}
