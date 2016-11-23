@@ -28,8 +28,7 @@
 						</goals>
 						<configuration>
 							<language>ws.regga.codegen.bbt.JavaBBTCodegen</language>
-<!-- 							<inputSpec>http://petstore.swagger.io/v2/swagger.json</inputSpec> -->
-			                <inputSpec>C:\Data\Lab\Repositories\TPDX\tpdx-core\src\main\resources\tpdx-core-api-contract.inflector.new.json</inputSpec>
+							<inputSpec>http://petstore.swagger.io/v2/swagger.json</inputSpec>
                  			<configOptions>
 			                	<testPackage>com.yourpackage</testPackage>
 								<testClassAnnotations>
@@ -42,7 +41,7 @@
 									super(targetProfile);
 								}
 								</testClassAdditionalContent>
-<!-- 								<testParentClass>TestBase</testParentClass> -->
+<!-- 								<testParentClass>com.otherpackage.util.TestBase</testParentClass> -->
 			                </configOptions>                 			
 						</configuration>
 					</execution>
