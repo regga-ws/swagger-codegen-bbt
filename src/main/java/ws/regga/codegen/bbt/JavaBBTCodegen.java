@@ -119,6 +119,11 @@ public class JavaBBTCodegen extends ReggaCodegen {
 			    		for (String snipletId : story.snipletSequence) {
 			    			
 			    			ReggaSniplet sniplet = getReggaSniplets().get(snipletId);
+			    			if (sniplet == null) {
+			    				LOGGER.error("Sniplet not found, ignoring: " + snipletId);
+			    				continue;
+			    			}
+			    			
 			    			String id = sniplet.id;
 			    			String title = sniplet.title;			    			
 			    			boolean ignore = sniplet.tags != null && sniplet.tags.contains("ignore");
